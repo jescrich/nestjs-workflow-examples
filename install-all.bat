@@ -18,6 +18,13 @@ call npm install
 echo Order processing example installed
 echo.
 
+REM Install kafka inventory example
+echo Installing 03-kafka-inventory...
+cd ..\03-kafka-inventory
+call npm install
+echo Kafka inventory example installed
+echo.
+
 REM Install demo utilities
 echo Installing demo utilities...
 cd ..\demo
@@ -30,5 +37,6 @@ echo.
 echo To run the examples:
 echo   - User Onboarding: cd 01-user-onboarding ^&^& npm run demo
 echo   - Order Processing: cd 02-order-processing ^&^& npm run demo
+echo   - Kafka Inventory: cd 03-kafka-inventory ^&^& npm run demo
 
 cd ..

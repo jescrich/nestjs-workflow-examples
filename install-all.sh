@@ -23,6 +23,13 @@ npm install
 echo -e "${GREEN}✅ Order processing example installed${NC}"
 echo ""
 
+# Install kafka inventory example
+echo -e "${BLUE}📚 Installing 03-kafka-inventory...${NC}"
+cd ../03-kafka-inventory
+npm install
+echo -e "${GREEN}✅ Kafka inventory example installed${NC}"
+echo ""
+
 # Install demo utilities
 echo -e "${BLUE}📚 Installing demo utilities...${NC}"
 cd ../demo
@@ -35,3 +42,4 @@ echo ""
 echo "To run the examples:"
 echo "  - User Onboarding: cd 01-user-onboarding && npm run demo"
 echo "  - Order Processing: cd 02-order-processing && npm run demo"
+echo "  - Kafka Inventory: cd 03-kafka-inventory && npm run demo"

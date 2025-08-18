@@ -30,6 +30,22 @@ A complete e-commerce order processing system managing the entire order lifecycl
 
 **States:** `CREATED` → `PAYMENT_PENDING` → `PAID` → `PROCESSING` → `SHIPPED` → `DELIVERED`
 
+### 3. Kafka-Driven Inventory Management (`03-kafka-inventory`)
+A real-time inventory management system with Kafka integration for event-driven state transitions.
+
+**Key Features:**
+- Kafka event consumption for automatic workflow transitions
+- Stock receiving, allocation, and release management
+- Audit trail and compliance tracking
+- Quarantine and quality control workflows
+- Automatic reorder triggering
+- Multi-warehouse support
+- Real-time inventory tracking
+
+**States:** `RECEIVING` → `AVAILABLE` → `RESERVED` → `ALLOCATED` → `IN_TRANSIT` → `DELIVERED`
+
+**Special States:** `QUARANTINE`, `AUDITING`, `DAMAGED`, `EXPIRED`, `REORDER_PENDING`
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -50,10 +66,12 @@ npm run install:all
 # Option 2: Install individual examples
 npm run install:user-onboarding   # Install user onboarding example
 npm run install:order-processing  # Install order processing example
+npm run install:kafka-inventory   # Install kafka inventory example
 
 # Option 3: Manual installation
 cd 01-user-onboarding && npm install
 cd ../02-order-processing && npm install
+cd ../03-kafka-inventory && npm install
 
 # Alternative: Use the shell script (Unix/Mac)
 chmod +x install-all.sh && ./install-all.sh
@@ -77,6 +95,14 @@ npm run demo
 #### Order Processing Interactive Demo
 ```bash
 cd 02-order-processing
+npm run demo
+```
+
+#### Kafka Inventory Interactive Demo
+```bash
+cd 03-kafka-inventory
+# Optional: Start Kafka first (if you want Kafka integration)
+docker-compose up -d
 npm run demo
 ```
 
@@ -123,6 +149,7 @@ Run demos directly from the examples directory:
 # From the examples/ directory
 npm run demo:user-onboarding    # Run user onboarding interactive demo
 npm run demo:order-processing   # Run order processing interactive demo
+npm run demo:kafka-inventory    # Run kafka inventory interactive demo
 ```
 
 ### Option 1: Interactive Mode (Recommended)
@@ -225,6 +252,19 @@ examples/
 │   │   ├── order.workflow.ts       # Workflow definition
 │   │   ├── order.service.ts        # Order service
 │   │   └── main.ts                 # Application entry
+│   └── package.json
+│
+├── 03-kafka-inventory/
+│   ├── src/
+│   │   ├── demo/
+│   │   │   ├── demo.ts              # Interactive demo
+│   │   │   └── demo.visualizer.ts   # Workflow visualization
+│   │   ├── kafka/                   # Kafka producer service
+│   │   ├── inventory.entity.ts     # Inventory entity and events
+│   │   ├── inventory.workflow.ts   # Workflow with Kafka events
+│   │   ├── inventory.service.ts    # Inventory service
+│   │   └── main.ts                 # Application entry
+│   ├── docker-compose.yml          # Kafka/Zookeeper setup
 │   └── package.json
 
 ```
