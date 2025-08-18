@@ -6,6 +6,9 @@
 
 # NestJS Workflow Examples
 
+> 📍 **This is the examples repository** for the [NestJS Workflow](https://github.com/jescrich/nestjs-workflow) library.  
+> Looking for the main library? Visit: **[github.com/jescrich/nestjs-workflow](https://github.com/jescrich/nestjs-workflow)**
+
 This repository contains comprehensive examples demonstrating the power and flexibility of the **[@jescrich/nestjs-workflow](https://github.com/jescrich/nestjs-workflow)** library. Each example showcases real-world use cases with interactive visualizations and automated demos.
 
 ## 📦 Main Library
@@ -122,11 +125,12 @@ A real-time inventory management system with Kafka integration for event-driven 
 - Node.js 18+ 
 - npm or yarn
 - TypeScript 5.0+
+- **@jescrich/nestjs-workflow** ^1.0.3 (included in examples)
 
 ### Installation
 
 ```bash
-# Clone the repository if you haven't already
+# Clone the examples repository
 git clone https://github.com/jescrich/nestjs-workflow-examples.git
 cd nestjs-workflow-examples
 
@@ -417,6 +421,19 @@ PORT=3002 npm start
 4. **Study Order Processing** - More complex with multiple decision points
 5. **Review the Code** - Understand implementation patterns
 6. **Build Your Own** - Create a custom workflow using these as templates
+
+## 🔗 Related Resources
+
+### Main Library
+- **GitHub Repository**: [https://github.com/jescrich/nestjs-workflow](https://github.com/jescrich/nestjs-workflow)
+- **NPM Package**: [@jescrich/nestjs-workflow](https://www.npmjs.com/package/@jescrich/nestjs-workflow)
+- **Documentation**: [Full API Documentation](https://github.com/jescrich/nestjs-workflow#table-of-contents)
+- **Contributing**: [Contribution Guidelines](https://github.com/jescrich/nestjs-workflow/blob/main/CONTRIBUTING.md)
+
+### Support
+- **Issues**: [Report bugs or request features](https://github.com/jescrich/nestjs-workflow/issues)
+- **Discussions**: [Ask questions and share ideas](https://github.com/jescrich/nestjs-workflow/discussions)
+- **Buy Me a Coffee**: [Support the project](https://buymeacoffee.com/jescrich)
 
 ## 📝 License
 
