@@ -308,13 +308,6 @@ PORT=3002 npm start
 5. **Review the Code** - Understand implementation patterns
 6. **Build Your Own** - Create a custom workflow using these as templates
 
-## 🔗 Related Resources
-
-- [Main Documentation](../README.md)
-- [API Reference](../base/CODEBASE_DOCUMENTATION.md)
-- [Workflow Concepts](../base/README.md)
-- [Contributing Guide](../base/CONTRIBUTING.md)
-
 ## 📝 License
 
 MIT - See LICENSE file in the root directory
