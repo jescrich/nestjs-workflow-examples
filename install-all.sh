@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# Install dependencies for all examples
+echo "📦 Installing dependencies for all examples..."
+echo ""
+
+# Colors for output
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+# Install user onboarding example
+echo -e "${BLUE}📚 Installing 01-user-onboarding...${NC}"
+cd 01-user-onboarding
+npm install
+echo -e "${GREEN}✅ User onboarding example installed${NC}"
+echo ""
+
+# Install order processing example
+echo -e "${BLUE}📚 Installing 02-order-processing...${NC}"
+cd ../02-order-processing
+npm install
+echo -e "${GREEN}✅ Order processing example installed${NC}"
+echo ""
+
+# Install demo utilities
+echo -e "${BLUE}📚 Installing demo utilities...${NC}"
+cd ../demo
+npm install
+echo -e "${GREEN}✅ Demo utilities installed${NC}"
+echo ""
+
+echo -e "${GREEN}🎉 All examples installed successfully!${NC}"
+echo ""
+echo "To run the examples:"
+echo "  - User Onboarding: cd 01-user-onboarding && npm run demo"
+echo "  - Order Processing: cd 02-order-processing && npm run demo"
