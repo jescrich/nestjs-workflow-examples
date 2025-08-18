@@ -1,6 +1,76 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://joseescrich.com/logos/nestjs-workflow.png">
+  <source media="(prefers-color-scheme: light)" srcset="https://joseescrich.com/logos/nestjs-workflow-light.png">
+  <img src="https://joseescrich.com/logos/nestjs-workflow.png" alt="NestJS Workflow Logo" width="200" style="margin-bottom:20px">
+</picture>
+
 # NestJS Workflow Examples
 
-This directory contains comprehensive examples demonstrating the power and flexibility of the `@jescrich/nestjs-workflow` library. Each example showcases real-world use cases with interactive visualizations and automated demos.
+This repository contains comprehensive examples demonstrating the power and flexibility of the **[@jescrich/nestjs-workflow](https://github.com/jescrich/nestjs-workflow)** library. Each example showcases real-world use cases with interactive visualizations and automated demos.
+
+## 📦 Main Library
+
+These examples demonstrate the [**NestJS Workflow**](https://github.com/jescrich/nestjs-workflow) library - a flexible workflow engine built on top of NestJS framework for managing complex state machines and workflows.
+
+### Installation & Documentation
+
+To use the workflow library in your own projects:
+
+```bash
+npm install @jescrich/nestjs-workflow
+# or
+yarn add @jescrich/nestjs-workflow
+```
+
+**📚 Full Documentation**: [https://github.com/jescrich/nestjs-workflow](https://github.com/jescrich/nestjs-workflow)
+
+### Key Features of the Library
+- **Stateless Architecture** - No additional storage requirements
+- **Event-Driven** - Built on NestJS's event system
+- **Dual Configuration** - Inline functions or decorator-based approach
+- **Kafka Integration** - Built-in support for event-driven workflows
+- **TypeScript Support** - Full type safety with generics
+- **Flexible Transitions** - Multiple from/to states and events
+
+### Quick Library Usage
+
+```typescript
+import { WorkflowModule, WorkflowDefinition } from '@jescrich/nestjs-workflow';
+
+// Define your workflow
+const orderWorkflow: WorkflowDefinition<Order, any, OrderEvent, OrderStatus> = {
+  states: {
+    finals: [OrderStatus.Completed, OrderStatus.Cancelled],
+    idles: [OrderStatus.Pending, OrderStatus.Processing],
+    failed: OrderStatus.Failed,
+  },
+  transitions: [
+    {
+      from: OrderStatus.Pending,
+      to: OrderStatus.Processing,
+      event: OrderEvent.Submit,
+      conditions: [(entity) => entity.price > 0],
+    },
+    // ... more transitions
+  ],
+  entity: {
+    // Entity management functions
+  }
+};
+
+// Register in your module
+@Module({
+  imports: [
+    WorkflowModule.register({
+      name: 'orderWorkflow',
+      definition: orderWorkflow,
+    }),
+  ],
+})
+export class AppModule {}
+```
+
+For complete implementation details, see the [main documentation](https://github.com/jescrich/nestjs-workflow#quick-start) or explore the examples below.
 
 ## 📚 Available Examples
 
