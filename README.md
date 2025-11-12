@@ -1,3 +1,13 @@
+🚨 Repository Deprecated
+
+⚠️ This repository is no longer maintained.
+All examples have been moved to the main NestJS Workflow repository
+, which now includes updated and additional examples.
+
+Please visit 👉 https://github.com/jescrich/nestjs-workflow
+for the latest version, examples, and documentation.
+
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://joseescrich.com/logos/nestjs-workflow.png">
   <source media="(prefers-color-scheme: light)" srcset="https://joseescrich.com/logos/nestjs-workflow-light.png">
